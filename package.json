@@ -1,0 +1,19 @@
+{
+  "name": "timeline",
+  "version": "0.1.0",
+  "description": "orchestrate a group of animations",
+  "keywords": ["animate", "group", "coordinate"],
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "jkroso/serve",
+    "chai-spies": "*",
+    "mocha": "*",
+    "jsmd": "*",
+    "chai": "*"
+  },
+  "repository": "git://github.com/jkroso/timeline.git",
+  "bugs": "https://github.com/jkroso/timeline/issues",
+  "author": "Jake Rosoman",
+  "files": ["index.js"],
+  "license": "MIT"
+}

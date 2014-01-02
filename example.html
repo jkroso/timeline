@@ -1,0 +1,30 @@
+
+<title>timeline example</title>
+
+<style>
+  body { padding: 60px; margin: 0; }
+  div {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: aliceblue;
+    height: 100px;
+    width: 200px;
+    margin: 15px;
+  }
+</style>
+
+<div id="box1"></div>
+<div id="box2"></div>
+
+<script>
+  var Timeline = require('./')
+  var move = require('move')
+
+  var a1 = move(box1).x(500)
+  var a2 = move(box2).x(500)
+
+  new Timeline()
+    .add(a1, 0  , 1)
+    .add(a2, 0.5, 1)
+    .run('2s')
+</script>

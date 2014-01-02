@@ -1,0 +1,49 @@
+
+var Animation = require('animation')
+
+module.exports = Timeline
+
+/**
+ * inherit from Animation
+ */
+
+Animation.extend(Timeline)
+
+function Timeline(){
+  this.animations = []
+}
+
+/**
+ * add an animation to the timeline
+ *
+ * @param {Animation} anim
+ * @param {Number} start
+ * @param {Number} end
+ * @return {this}
+ */
+
+Timeline.prototype.add = function(anim, start, end){
+  this.animations.push([anim, start, end])
+  return this
+}
+
+/**
+ * render all animations at point `n` on the timeline
+ *
+ * @param {Number} n
+ * @return {this}
+ */
+
+Timeline.prototype.render = function(n){
+  var anims = this.animations
+  var i = anims.length
+  while (i--) {
+    var anim = anims[i]
+    var from = anim[1]
+    var to = anim[2]
+    if (to < n) continue
+    if (from > n) continue
+    anim[0].render((n - from) / (to - from))
+  }
+  return this
+}
