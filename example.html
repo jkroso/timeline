@@ -24,7 +24,7 @@
   var a2 = move(box2).x(500)
 
   new Timeline()
-    .add(a1, 0  , 1)
-    .add(a2, 0.5, 1)
+    .add(0  , 1, a1)
+    .add(0.5, 1, a2)
     .run('2s')
 </script>

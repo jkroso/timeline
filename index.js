@@ -22,7 +22,7 @@ function Timeline(){
  * @return {this}
  */
 
-Timeline.prototype.add = function(anim, start, end){
+Timeline.prototype.add = function(start, end, anim){
   this.animations.push([anim, start, end])
   return this
 }
