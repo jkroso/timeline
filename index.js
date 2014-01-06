@@ -60,3 +60,26 @@ Timeline.prototype.render = function(n){
   }
   return this
 }
+
+/**
+ * create a new timeline which will start when this
+ * one complete
+ *
+ * @param {Animation|Function} [move]
+ * @return {Timeline}
+ */
+
+Timeline.prototype.then = function(move){
+  if (move != null) {
+    var fn = typeof move != 'function'
+      ? function(){ move.run() }
+      : move
+    this.on('end', fn)
+    this.running || this.parent || this.run()
+    return this
+  }
+  move = new Timeline
+  move.parent = this
+  this.then(move)
+  return move
+}
