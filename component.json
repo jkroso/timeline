@@ -3,7 +3,9 @@
 	"repo": "jkroso/timeline",
 	"description": "orchestrate a group of animations",
 	"keywords": ["animate", "group", "coordinate"],
-	"dependencies": {},
+	"dependencies": {
+		"jkroso/animation": "0.1.0"
+	},
 	"scripts": ["index.js"],
 	"license": "MIT"
 }
