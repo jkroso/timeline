@@ -48,6 +48,7 @@ Timeline.prototype.add = function(start, end, anim){
  */
 
 Timeline.prototype.render = function(n){
+  n = this._ease(n)
   var anims = this.animations
   var i = anims.length
   while (i--) {
