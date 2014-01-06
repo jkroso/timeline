@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "orchestrate a group of animations",
   "keywords": ["animate", "group", "coordinate"],
-  "dependencies": {},
+  "dependencies": {
+    "animation": "jkroso/animation#0.1.0"
+  },
   "devDependencies": {
     "serve": "jkroso/serve",
-    "chai-spies": "*",
-    "mocha": "*",
-    "jsmd": "*",
-    "chai": "*"
+    "move": "jkroso/move",
+    "jsmd": "*"
   },
   "repository": "git://github.com/jkroso/timeline.git",
   "bugs": "https://github.com/jkroso/timeline/issues",
