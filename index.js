@@ -41,9 +41,9 @@ Timeline.prototype.render = function(n){
     var anim = anims[i]
     var from = anim[1]
     var to = anim[2]
-    if (to < n) continue
-    if (from > n) continue
-    anim[0].render((n - from) / (to - from))
+    if (from > n) anim[0].render(0)
+    else if (to < n) anim[0].render(1)
+    else anim[0].render((n - from) / (to - from))
   }
   return this
 }
