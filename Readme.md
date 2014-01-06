@@ -1,7 +1,7 @@
 
 # timeline
 
-  orchestrate a group of animations
+  orchestrate a group of animations. Timelines themselves implement the animation API and therefore can be nested arbitrarily.
 
 ## Installation
 
@@ -9,7 +9,7 @@ With your favorite package manager:
 
 - [packin](//github.com/jkroso/packin): `packin add jkroso/timeline`
 - [component](//github.com/component/component#installing-packages): `component install jkroso/timeline`
-- [npm](//npmjs.org/doc/cli/npm-install.html): `npm install timeline`
+- [npm](//npmjs.org/doc/cli/npm-install.html): `npm install jkroso/timeline`
 
 then in your app:
 
