@@ -36,6 +36,11 @@ Animation.extend(Timeline)
  */
 
 Timeline.prototype.add = function(start, end, anim){
+  if (arguments.length == 1) {
+    anim = start
+    start = 0
+    end = 1
+  }
   this.animations.push([anim, start, end])
   return this
 }
