@@ -1,17 +1,30 @@
 
 var Animation = require('animation')
 
-module.exports = Timeline
+/**
+ * create a timeline
+ *
+ * @param {Array} anims
+ * @return {Timeline}
+ */
+
+module.exports = function(anims){
+  var line = new Timeline
+  if (anims) for (var i = 0; i < anims.length;) {
+    line.add.apply(line, anims[i++])
+  }
+  return line
+}
+
+function Timeline(){
+  this.animations = []
+}
 
 /**
  * inherit from Animation
  */
 
 Animation.extend(Timeline)
-
-function Timeline(){
-  this.animations = []
-}
 
 /**
  * add an animation to the timeline
