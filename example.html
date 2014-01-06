@@ -17,14 +17,11 @@
 <div id="box2"></div>
 
 <script>
-  var Timeline = require('./')
+  var timeline = require('./')
   var move = require('move')
 
-  var a1 = move(box1).x(500)
-  var a2 = move(box2).x(500)
-
-  new Timeline()
-    .add(0  , 1, a1)
-    .add(0.5, 1, a2)
+  timeline()
+    .add(0  , 1, move(box1).x(500))
+    .add(0.5, 1, move(box2).x(500))
     .run('2s')
 </script>

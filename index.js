@@ -29,9 +29,9 @@ Animation.extend(Timeline)
 /**
  * add an animation to the timeline
  *
- * @param {Animation} anim
  * @param {Number} start
  * @param {Number} end
+ * @param {Animation} anim
  * @return {this}
  */
 
@@ -71,21 +71,21 @@ Timeline.prototype.render = function(n){
  * create a new timeline which will start when this
  * one complete
  *
- * @param {Animation|Function} [move]
+ * @param {Animation|Function} [anim]
  * @return {Timeline}
  */
 
-Timeline.prototype.then = function(move){
-  if (move != null) {
-    var fn = typeof move != 'function'
-      ? function(){ move.run() }
-      : move
+Timeline.prototype.then = function(anim){
+  if (anim != null) {
+    var fn = typeof anim != 'function'
+      ? function(){ anim.run() }
+      : anim
     this.on('end', fn)
     this.running || this.parent || this.run()
     return this
   }
-  move = new Timeline
-  move.parent = this
-  this.then(move)
-  return move
+  anim = new Timeline
+  anim.parent = this
+  this.then(anim)
+  return anim
 }
