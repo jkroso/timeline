@@ -1,18 +1,17 @@
 {
   "name": "timeline",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "orchestrate a group of animations",
   "keywords": ["animate", "group", "coordinate"],
   "dependencies": {
-    "animation": "jkroso/animation#0.1.0"
+    "@jkroso/animation": "1"
   },
   "devDependencies": {
     "serve": "jkroso/serve",
-    "move": "jkroso/move",
-    "jsmd": "*"
+    "@jkroso/move": "1"
   },
   "repository": "git://github.com/jkroso/timeline.git",
-  "bugs": "https://github.com/jkroso/timeline/issues",
+  "transpile": [["*.js", "!sourcegraph/babel->js", {"stage": 0}]],
   "author": "Jake Rosoman",
   "files": ["index.js"],
   "license": "MIT"
