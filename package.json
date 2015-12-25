@@ -1,5 +1,5 @@
 {
-  "name": "timeline",
+  "name": "@jkroso/timeline",
   "version": "1.0.0",
   "description": "orchestrate a group of animations",
   "keywords": ["animate", "group", "coordinate"],
