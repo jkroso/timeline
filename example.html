@@ -14,6 +14,7 @@
 
 <div id="box1"></div>
 <div id="box2"></div>
+<div id="box3"></div>
 
 <script>
   import move from '@jkroso/move'
@@ -22,5 +23,7 @@
   timeline()
     .add(0  , 1, move(box1).x(500))
     .add(0.5, 1, move(box2).x(500))
+    .add(0, 0.5, move(box3).x(500))
+    .add(0.5, 1, move(box3).x(-500))
     .run('2s')
 </script>
