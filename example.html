@@ -25,5 +25,6 @@
     .add(0.5, 1, move(box2).x(500).ease('in-out-quad'))
     .add(0, 0.5, move(box3).x(500).ease('in-out-quad'))
     .add(0.5, 1, move(box3).x(-500).ease('in-out-quad'))
-    .run('2s')
+    .duration('2s')
+    .loop(Infinity)
 </script>
