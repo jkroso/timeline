@@ -8,11 +8,11 @@ import Animation from '@jkroso/animation'
  */
 
 const timeline = anims => {
-  const line = new Timeline([])
+  const timeline = new Timeline([])
   if (anims) for (var i = 0; i < anims.length;) {
-    line.add.apply(line, anims[i++])
+    timeline.add(...anims[i++])
   }
-  return line
+  return timeline
 }
 
 export default timeline
@@ -52,8 +52,7 @@ export class Timeline extends Animation {
   render(n) {
     n = this._ease(n)
     const anims = this.animations
-    var i = anims.length
-    while (i--) {
+    for (let i = 0, len = anims.length; i < len; i++) {
       const [anim, from, to] = anims[i]
       if (from > n) anim.render(0)
       else if (to < n) anim.render(1)
