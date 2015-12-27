@@ -21,7 +21,6 @@ export class Timeline extends Animation {
   constructor(animations) {
     super()
     this.animations = animations
-    this.current = new Array(animations.length)
   }
 
   /**
@@ -40,7 +39,6 @@ export class Timeline extends Animation {
       end = 1
     }
     this.animations.push([anim, start, end])
-    this.current.push(0)
     return this
   }
 
@@ -54,11 +52,10 @@ export class Timeline extends Animation {
   render(n) {
     n = this._ease(n)
     const anims = this.animations
-    const current = this.current
     for (let i = 0, len = anims.length; i < len; i++) {
       const [anim, from, to] = anims[i]
-      const progress = from > n ? 0 : to < n ? 1 : (n - from) / (to - from)
-      if (current[i] != progress) anim.render(current[i] = progress)
+      if (n < from || n > to) continue
+      anim.render((n - from) / (to - from))
     }
     return this
   }

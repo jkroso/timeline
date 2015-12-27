@@ -1,6 +1,6 @@
 {
   "name": "@jkroso/timeline",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "orchestrate a group of animations",
   "keywords": ["animate", "group", "coordinate"],
   "dependencies": {
